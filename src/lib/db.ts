@@ -24,8 +24,8 @@ const connectDb=async ()=>{
         const conn=await cached.promise 
             return conn
         } catch (error) {
-            console.log(error)
-
+            console.error("Database connection error:", error)
+            throw new Error(`Failed to connect to MongoDB: ${error}`)
         }
 
 
