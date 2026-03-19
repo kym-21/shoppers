@@ -1,5 +1,14 @@
 import Welcome from "@/components/Welcome";
+import React from 'react'
 
-export default function RegisterPage() {
-  return <Welcome />;
+function Register() {
+  return (
+    <div>
+      <Welcome />
+    </div>
+  )
 }
+
+export default Register
+
+
