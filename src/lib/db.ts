@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
+import { error } from "console";
 
 const mongodbUrl =process.env.MONGODB_URL 
 
 if(!mongodbUrl){
-    throw new Error("db error");
+ throw new Error("db error");
 }
 
 
@@ -24,7 +25,7 @@ const connectDb=async ()=>{
         const conn=await cached.promise 
             return conn
         } catch (error) {
-            console.error("Database connection error:", error)
+            console.log("error:")
             throw new Error(`Failed to connect to MongoDB: ${error}`)
         }
 
