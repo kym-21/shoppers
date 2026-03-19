@@ -1,8 +1,8 @@
 import React from 'react'
-
+import { motion } from "motion/react"
 function Welcome() {
   return (
-    <div className="w-full min-h-screen bg-gradient-to-b from-green-200 to-white">
+    <div className='flex flex-col items-center justify-center min-h-screen text-center p-6'>
       
     </div>
   )
