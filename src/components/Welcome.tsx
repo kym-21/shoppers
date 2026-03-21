@@ -2,7 +2,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, ShoppingBasket, Bike } from 'lucide-react'
-function Welcome() {
+type propType = {
+  nextStep :(s:number)=> void
+}
+function Welcome({nextStep}:propType) {
   return (
     <div className='flex flex-col items-center justify-center min-h-screen text-center p-6'>
       <motion.div
@@ -43,6 +46,7 @@ function Welcome() {
         transition={{ duration: 0.6, delay: 0.8 }}
         className='inline-flex items-center gap-2 bg-green-600 text-white py-3 px-8 rounded-2xl font-semibold
         shadow-md hover:bg-green-700 transition-all duration-200 mt-10'
+        onClick={()=>nextStep(2)}
       >
         <ArrowRight className='w-5 h-5 inline-block mr-2' />
         Get Started
