@@ -1,3 +1,4 @@
+declare module "*.css";
 import { Connection } from "mongoose";
 declare global {
     var mongoose:{
