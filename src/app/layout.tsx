@@ -1,6 +1,9 @@
-import type { Metadata } from "next";
-import "./globals.css";
 
+import type { Metadata } from "next";
+
+// @ts-expect-error - Next.js handles global CSS imports.
+import "./globals.css";
+import Provider from "@/Provider";
 
 export const metadata: Metadata = {
   title: "Shoppers | Your Ultimate Shopping Destination",
@@ -16,7 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="w-full min-h-screen bg-gradient-to-b from-green-200 to-white">
         
-        {children}
+        <Provider>
+          {children}
+        </Provider>
       </body>
     </html>
   );

@@ -4,6 +4,7 @@ import { motion } from "motion/react"
 import Image from 'next/image'
 import googleImage from "@/assests/google.png"
 import axios from 'axios'
+import { useRouter } from 'next/navigation'
 type propType = {
 previousStep:(s:number)=> void
 }
@@ -13,6 +14,7 @@ function RegisterForm({previousStep}:propType) {
     const [password, setPassword]=useState("")
     const [showPassword, setShowPassword] = useState(false)
     const [loading,setLoading]= useState(false)
+    const router = useRouter()
     const handleRegister = async (e:React.FormEvent) => {
         e.preventDefault()
         setLoading(true)
@@ -105,7 +107,7 @@ function RegisterForm({previousStep}:propType) {
 
       </motion.form>
 
-      <p className='text-gray-600 mt-6 text-sm flex items-center gap-1 cursor-pointer'>Already have an account ? <LogIn className='w-4 h-4'/><span className='text-green-600'>Sign in</span></p>
+      <p className='text-gray-600 mt-6 text-sm flex items-center gap-1 cursor-pointer' onClick={()=>router.push('/login')}>Already have an account ? <LogIn className='w-4 h-4'/><span className='text-green-600'>Sign in</span></p>
     </div>
   )
 
