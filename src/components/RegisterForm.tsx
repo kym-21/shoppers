@@ -1,4 +1,4 @@
-import { ArrowLeft, Leaf } from 'lucide-react'
+import { ArrowLeft, Leaf, User } from 'lucide-react'
 import React from 'react'
 import { motion } from "motion/react"
 type propType = {
@@ -27,6 +27,7 @@ function RegisterForm({previousStep}:propType) {
       animate={{ opacity: 1, }}
       transition={{ duration: 0.6 }}>
         <div className='relative'>
+          <User className="absolute left-3 top-3.5 w-5 h-5 text-gray-400"/>
           <input type="text" placeholder='Name' className='w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600' />
         </div>
         <div className='relative'>
