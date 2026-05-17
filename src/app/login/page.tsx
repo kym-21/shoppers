@@ -27,6 +27,7 @@ try {
     email,
     password
   })
+  router.push("/")
   setLoading(false)
 }  catch (error) {
     console.log(error)
@@ -92,10 +93,10 @@ try {
           <span className='flex-1 h-px bg-gray-200'></span>
         </div>
 
-        <button className='w-full flex items-center justify-center gap-3 border border-gray-300 hover:bg-gray-50 py-3 rounded-xl text-gray-700 font-med trasnition-all duration-200 cursor-pointer' onClick={()=>signIn("google")}>
+        <div className='w-full flex items-center justify-center gap-3 border border-gray-300 hover:bg-gray-50 py-3 rounded-xl text-gray-700 font-med trasnition-all duration-200 cursor-pointer' onClick={()=>signIn("google",{callbackUrl:"/"})}>
           <Image src={googleImage} alt="Google" width={20} height={20} />
           Continue with Google
-        </button>
+        </div>
 
 
       </motion.form>
