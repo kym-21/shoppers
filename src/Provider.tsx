@@ -7,6 +7,7 @@ function Provider({children}: {children:React.ReactNode}) {
     <SessionProvider>
       {children}    
     </SessionProvider>
+    
   )
 }
 

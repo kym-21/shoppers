@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import mongoose from "mongoose";
 
 
@@ -6,9 +6,10 @@ interface IUser{
     _id:mongoose.Types.ObjectId
     name:string
     email:string
-    password:string
+    password?:string
     mobile:string
     role:"user" | "deliveryBoy" | "admin"
+    image?:string
     
 }
 
@@ -24,7 +25,7 @@ email:{
 },
 password:{
     type:String,
-    required:true
+    required:false
 },
 mobile:{
     type:String,
@@ -34,8 +35,10 @@ role:{
     type:String,
     enum:["user","deliveryBoy","admin"],
     default:"user"
+},
+image:{
+    type:String,
 }
-
 },{timestamps:true})
 
 const User=mongoose.models.User || mongoose.model("User",userSchema)

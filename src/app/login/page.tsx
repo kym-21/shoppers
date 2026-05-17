@@ -1,13 +1,14 @@
 'use client'
 import {  EyeIcon, EyeOff, Leaf, Loader2, Lock, LogIn, Mail, } from 'lucide-react'
-import React, { useState, FormEvent } from 'react'
+import React, { FormEvent, useState,} from 'react'
 import { motion } from "motion/react"
 import Image from 'next/image'
 import googleImage from "@/assests/google.png"
-import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { signIn } from 'next-auth/react'
 import { useSession } from 'next-auth/react'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import axios from 'axios'
 
 function Login() {
     
@@ -91,7 +92,7 @@ try {
           <span className='flex-1 h-px bg-gray-200'></span>
         </div>
 
-        <button className='w-full flex items-center justify-center gap-3 border border-gray-300 hover:bg-gray-50 py-3 rounded-xl text-gray-700 font-med trasnition-all duration-200'>
+        <button className='w-full flex items-center justify-center gap-3 border border-gray-300 hover:bg-gray-50 py-3 rounded-xl text-gray-700 font-med trasnition-all duration-200 cursor-pointer' onClick={()=>signIn("google")}>
           <Image src={googleImage} alt="Google" width={20} height={20} />
           Continue with Google
         </button>
@@ -99,7 +100,7 @@ try {
 
       </motion.form>
 
-      <p className='text-gray-600 mt-6 text-sm flex items-center gap-1 cursor-pointer' onClick={()=>router.push('/register')}>create an account ? <LogIn className='w-4 h-4'/><span className='text-green-600'>Sign Up</span></p>
+      <p className='text-gray-600 mt-6 text-sm flex items-center gap-1 cursor-pointer' onClick={()=>router.push('/register')}>Want to create an account ? <LogIn className='w-4 h-4'/><span className='text-green-600'>Sign Up</span></p>
     </div>
   )
 
